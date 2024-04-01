@@ -11,12 +11,12 @@ function App() {
 	return (
 		<div className='App'>
 			{/* <Welcome /> */}
-			<StepOne/>
+			{/* <StepOne/> */}
 			{/* <StepTwo /> */}
 			{/* <StepThree /> */}
 			{/* <StepFour/> */}
 			{/* <Thanks/> */}
-			{/* <YourAnswers /> */}
+			<YourAnswers />
 		</div>
 	)
 }

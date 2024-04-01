@@ -1,7 +1,21 @@
 import { AppButton } from '../components/UI/AppButton'
 import { Heading } from '../components/Typography/Heading'
+import { AppInput } from '../components/UI/AppInput'
+import { useEffect, useState } from 'react'
 
 export const YourAnswers = () => {
+
+	const [nameData, setNameData] = useState()
+	const [nameError, setNameError] = useState(false)
+
+	useEffect(() => {
+		if (!nameData) {
+			setNameError(true)
+		} else {
+			setNameError(false)
+		}
+	}, [nameData])
+
 	return (
 		<div className='container'>
 			<div className='wrapper'>
@@ -21,33 +35,71 @@ export const YourAnswers = () => {
 				</div>
 				<div className='welcome'>
 					<Heading 
-						headingType='h1' 
-						headingText='Ваши ответы' />
+					headingType='h1' 
+					headingText='Ваши ответы' 
+					/>
 					<div className='question'>
 						<ul>
 							<li>
-								<Heading 
-									headingType='h3' 
-									headingText='1. Где вы узнали про нашу школу?' />
-								<span>ответ</span>
+								<Heading
+									headingType='h3'
+									headingText='1. Где вы узнали про нашу школу?'
+								/>
+								<AppInput
+									id='username'
+									inputType='text'
+									inputPlacaholder='Ответ'
+									hasError={nameError}
+									onChange={e => setNameData(e.target.value)}
+									inputLabel={''}
+									errorMessage='Введите ваш ответ'
+								/>
+								{/* <span>ответ</span> */}
 							</li>
 							<li>
-								<Heading 
-									headingType='h3' 
-									headingText='2. На какой курс вы хотите пойти?' />
-								<span>ответ</span>
+								<Heading
+									headingType='h3'
+									headingText='2. На какой курс вы хотите пойти?'
+								/>
+								<AppInput
+									id='username'
+									inputType='text'
+									inputPlacaholder='Ответ'
+									hasError={nameError}
+									onChange={e => setNameData(e.target.value)}
+									inputLabel={''}
+									errorMessage='Введите ваш ответ'
+								/>
+								{/* <span>ответ</span> */}
 							</li>
 							<li>
-								<Heading 
-									headingType='h3' 
-									headingText='3. Какой вы?' />
-								<span>ответ</span>
+								<Heading headingType='h3' headingText='3. Какой вы?' />
+								<AppInput
+									id='username'
+									inputType='text'
+									inputPlacaholder='Ответ'
+									hasError={nameError}
+									onChange={e => setNameData(e.target.value)}
+									inputLabel={''}
+									errorMessage='Введите ваш ответ'
+								/>
+								{/* <span>ответ</span> */}
 							</li>
 							<li>
-								<Heading 
-									headingType='h3' 
-									headingText='4. Хотите ли вы стать частью семьи Tehnikum?' />
-								<span>ответ</span>
+								<Heading
+									headingType='h3'
+									headingText='4. Хотите ли вы стать частью семьи Tehnikum?'
+								/>
+								<AppInput
+									id='username'
+									inputType='text'
+									inputPlacaholder='Ответ'
+									hasError={nameError}
+									onChange={e => setNameData(e.target.value)}
+									inputLabel={''}
+									errorMessage='Введите ваш ответ'
+								/>
+								{/* <span>ответ</span> */}
 							</li>
 						</ul>
 						<AppButton buttonText='Подтвердить' />
